@@ -1,61 +1,321 @@
-<!DOCTYPE html>
-<html lang="es">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>CollectVibe</title>
+<!DOCTYPE html><html class="light" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>CollectiVibe - Gallery</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&amp;family=Work+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="style.css" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-primary": "#ffffff",
+                      "on-secondary-container": "#fffbff",
+                      "outline": "#737686",
+                      "tertiary-fixed-dim": "#d0bcff",
+                      "background": "#f7f9fb",
+                      "surface-container-high": "#e6e8ea",
+                      "primary-fixed": "#dbe1ff",
+                      "on-primary-container": "#eeefff",
+                      "inverse-on-surface": "#eff1f3",
+                      "on-tertiary-container": "#f6edff",
+                      "surface-container-highest": "#e0e3e5",
+                      "surface-variant": "#e0e3e5",
+                      "tertiary-fixed": "#e9ddff",
+                      "on-surface-variant": "#434655",
+                      "on-tertiary": "#ffffff",
+                      "on-error": "#ffffff",
+                      "surface-container-lowest": "#ffffff",
+                      "surface": "#f7f9fb",
+                      "secondary": "#b90538",
+                      "on-secondary-fixed": "#40000d",
+                      "tertiary": "#632ecd",
+                      "on-tertiary-fixed-variant": "#5516be",
+                      "outline-variant": "#c3c6d7",
+                      "on-secondary-fixed-variant": "#92002a",
+                      "on-primary-fixed-variant": "#003ea8",
+                      "on-secondary": "#ffffff",
+                      "on-error-container": "#93000a",
+                      "secondary-fixed-dim": "#ffb2b7",
+                      "on-tertiary-fixed": "#23005c",
+                      "inverse-surface": "#2d3133",
+                      "error-container": "#ffdad6",
+                      "secondary-fixed": "#ffdadb",
+                      "on-primary-fixed": "#00174b",
+                      "inverse-primary": "#b4c5ff",
+                      "primary-container": "#2563eb",
+                      "surface-tint": "#0053db",
+                      "surface-bright": "#f7f9fb",
+                      "error": "#ba1a1a",
+                      "secondary-container": "#dc2c4f",
+                      "surface-container": "#eceef0",
+                      "primary-fixed-dim": "#b4c5ff",
+                      "on-background": "#191c1e",
+                      "primary": "#004ac6",
+                      "on-surface": "#191c1e",
+                      "surface-dim": "#d8dadc",
+                      "tertiary-container": "#7d4ce7",
+                      "surface-container-low": "#f2f4f6"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "md": "24px",
+                      "sm": "12px",
+                      "margin-desktop": "48px",
+                      "gutter": "20px",
+                      "base": "8px",
+                      "margin-mobile": "16px",
+                      "xs": "4px",
+                      "xl": "64px",
+                      "lg": "40px"
+              },
+              "fontFamily": {
+                      "label-sm": [
+                              "Work Sans"
+                      ],
+                      "headline-lg-mobile": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "body-md": [
+                              "Work Sans"
+                      ],
+                      "headline-md": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "display-lg": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "label-bold": [
+                              "Work Sans"
+                      ],
+                      "body-lg": [
+                              "Work Sans"
+                      ],
+                      "headline-lg": [
+                              "Plus Jakarta Sans"
+                      ]
+              },
+              "fontSize": {
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "label-bold": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "700"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<header class="bg-surface dark:bg-inverse-surface w-full h-16 shadow-sm flex justify-between items-center px-margin-desktop border-b border-outline-variant/30 z-50 sticky top-0">
+<div class="flex items-center gap-xl">
+<h1 class="font-display-lg text-headline-lg-mobile md:text-display-lg font-extrabold text-primary dark:text-primary-fixed-dim">CollectiVibe</h1>
+<nav class="hidden md:flex gap-md items-center h-full pt-1">
+<a class="text-primary dark:text-primary-fixed-dim border-b-2 border-primary font-bold pb-1 font-body-md text-body-md" href="#">Collections</a>
 
-        <link rel="stylesheet" href="style.css" />
-    </head>
-    <body>
-        <h1><a href="index.html">CollectVibe</a></h1>
-        <nav>
-            <ul>
-                <li><p>Colecciones</p></li>
-                <li>
-                    <label for="search-input" aria-label="Buscar elementos">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-search"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M3 10a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" /><path d="M21 21l-6 -6" /></svg>
-                    </label>
-                    <input id="search-input" type="text" placeholder="Buscar" aria-label="Buscar" />
-                    <button type="submit">Buscar</button>
-                </li>
-            </ul>
-        </nav> 
-        <div>
-            <h2>Bienvenido a CollectVibe</h2>
-            <p>Explora nuestra colección de artículos y descubre nuevas experiencias.</p>
-        </div>
-        <main>
-            <section>
-                <h3>Rarity filter</h3>
-                <p>Filter by Tier</p>
-                <ul>
-                    <li>Todos los items</li>
-                    <li>Comunes</li>
-                    <li>Raros</li>
-                    <li>Épicos</li>
-                </ul>
-            </section>
-            <div>
-                <h1>Galeria</h1>
-                <p>Descubre tu proxima obsesión</p>
-                <ul>
-                    <li>Item 1</li>
-                    <li>Item 2</li>
-                    <li>Item 3</li>
-                </ul>
-            </div>
-        </main>
-        <footer>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-            <small>&copy; 2024 CollectVibe. Todos los derechos reservados.</small>
-        </footer>
-    </body>
-</html>
+</nav>
+</div>
+<div class="flex items-center gap-md">
+<div class="relative hidden md:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="pl-10 pr-4 py-2 border border-outline-variant rounded-full bg-surface-container-lowest focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none transition-all" placeholder="Search..." type="text">
+</div>
+<button class="text-on-surface-variant hover:text-primary transition-colors duration-200 Active: scale-95 transition-transform"><span class="material-symbols-outlined" data-icon="notifications">notifications</span></button>
+<button class="text-on-surface-variant hover:text-primary transition-colors duration-200 Active: scale-95 transition-transform"><span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span></button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant">
+<img alt="User Profile Avatar" class="w-full h-full object-cover" data-alt="A small circular avatar placeholder image showing a stylized character portrait with bright electric blue highlights against a dark grey background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbT20nlhutJVxNrbapRd7_sv-hEaGN8_JRmDHrUFIrhmrQo7Qh7YJU-Oq90ndPPkmAiDnhU6eX7HKT5DDeweKP2RewUwtEzmyWNFQmLOtI82hmFD9Rmb90JD_YSd_mS7brYpN6dvqzj8OepdZbTNShYhASvmgJUQ41se9Xeov_L_hhhwji5fYUAA0HHcvuojVV2JzZBmV9ShS9YDsGOT_yVOItOIuQRui9PB2ZZzUu8OAHnKjo8ZOdBg">
+</div>
+</div>
+</header>
+<div class="flex flex-1">
+<!-- SideNavBar -->
+<aside class="bg-surface-container-low dark:bg-surface-container-highest w-64 h-[calc(100vh-64px)] sticky top-16 hidden md:flex flex-col gap-base p-md border-r border-outline-variant/20 overflow-y-auto">
+<div class="mb-md">
+<h2 class="font-headline-md text-headline-md text-primary">Rarity Filters</h2>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-1">Browse by Tier</p>
+</div>
+<nav class="flex flex-col gap-2 flex-1">
+<a class="flex items-center gap-3 p-2 text-primary dark:text-primary-fixed-dim font-bold bg-primary-fixed/20 rounded-lg Active: scale-[0.98] transition-all font-label-bold text-label-bold" href="#">
+<span class="material-symbols-outlined filled-icon text-lg">category</span>
+                    All Items
+                </a>
+<a class="flex items-center gap-3 p-2 text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high dark:hover:bg-surface-variant rounded-lg transition-all font-label-bold text-label-bold" href="#">
+<span class="material-symbols-outlined text-lg">label</span>
+                    Common
+                </a>
+<a class="flex items-center gap-3 p-2 text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high dark:hover:bg-surface-variant rounded-lg transition-all font-label-bold text-label-bold" href="#">
+<span class="material-symbols-outlined text-lg">stars</span>
+                    Rare
+                </a>
+<a class="flex items-center gap-3 p-2 text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high dark:hover:bg-surface-variant rounded-lg transition-all font-label-bold text-label-bold" href="#">
+<span class="material-symbols-outlined text-lg">workspace_premium</span>
+                    Legendary
+                </a>
+<a class="flex items-center gap-3 p-2 text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high dark:hover:bg-surface-variant rounded-lg transition-all font-label-bold text-label-bold" href="#">
+<span class="material-symbols-outlined text-lg">diamond</span>
+                    Mythic
+                </a>
+</nav>
+<button class="mt-auto w-full py-2 border border-primary text-primary rounded-lg font-label-bold text-label-bold hover:bg-primary/5 transition-colors">Reset Filters</button>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 p-margin-mobile md:p-margin-desktop bg-surface">
+<div class="mb-lg flex justify-between items-end">
+<div>
+<h2 class="font-display-lg text-headline-lg-mobile md:text-headline-lg font-bold text-on-surface">Gallery</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">Discover your next obsession.</p>
+</div>
+</div>
+<!-- Bento Grid Gallery -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Card 1 (Legendary) -->
+<div class="bg-surface-container-lowest border border-surface-container-high rounded-xl overflow-hidden shadow-[0_4px_12px_rgba(15,23,42,0.05)] hover:shadow-[0_12px_24px_rgba(15,23,42,0.1)] hover:border-primary/50 transition-all duration-300 group relative flex flex-col">
+<div class="absolute top-4 left-4 z-10 bg-secondary px-3 py-1 rounded-full shadow-sm">
+<span class="font-label-bold text-label-sm text-on-secondary uppercase tracking-wider">Legendary</span>
+</div>
+<div class="absolute top-4 right-4 z-10 flex gap-2">
+<button class="w-8 h-8 rounded-full bg-surface/80 backdrop-blur-sm flex items-center justify-center text-outline hover:text-secondary transition-colors" onclick="this.querySelector('span').classList.toggle('filled-icon'); this.classList.toggle('text-secondary')">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+</div>
+<div class="h-64 bg-gradient-to-br from-surface-container to-surface-container-lowest p-6 flex items-center justify-center relative overflow-hidden group-hover:bg-secondary/5 transition-colors duration-500">
+<img class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" data-alt="A highly detailed 3D render of a futuristic mechanical wolf action figure. It features gleaming silver armor with glowing red accents along its spine. The lighting is cinematic, showcasing a premium, high-energy modern aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDakZtBGBVquxVCbLmMvrW9pRFBcsl_4SFJ_ONlMrnL3vJaZoWbiKdR1-j9cGIzsKMA5gK7BEgTMgrisqfm6T6P-Lkz20t3Lu4eswkltw-_cJHtKb_36q-UIXXFmFdTgvIY1DHaR7Baxd-wbxgabfNTjTGKAfUxkNT5b0mg7BF-DUrR1mUwoh7hoTaUQukk74jeDTukdtirvK1BuCZpQZoTJADNJ92gGqzyh2N1ghp4vzrF_LoAOkNFQ">
+</div>
+<div class="p-4 flex flex-col flex-1 border-t border-surface-container">
+<h3 class="font-headline-md text-headline-md font-semibold text-on-surface mb-1">Cyber Lycan V2</h3>
+<p class="font-body-md text-sm text-on-surface-variant mb-4">Mecha Beast Series</p>
+<div class="mt-auto flex justify-between items-center">
+<span class="font-label-bold text-lg text-on-surface font-bold">1,250 CR</span>
+<button class="w-10 h-10 rounded-full bg-primary hover:bg-surface-tint text-on-primary flex items-center justify-center shadow-md hover:scale-95 transition-all">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 2 (Rare) -->
+<div class="bg-surface-container-lowest border border-surface-container-high rounded-xl overflow-hidden shadow-[0_4px_12px_rgba(15,23,42,0.05)] hover:shadow-[0_12px_24px_rgba(15,23,42,0.1)] hover:border-primary/50 transition-all duration-300 group relative flex flex-col">
+<div class="absolute top-4 left-4 z-10 bg-primary px-3 py-1 rounded-full shadow-sm">
+<span class="font-label-bold text-label-sm text-on-primary uppercase tracking-wider">Rare</span>
+</div>
+<div class="absolute top-4 right-4 z-10 flex gap-2">
+<button class="w-8 h-8 rounded-full bg-surface/80 backdrop-blur-sm flex items-center justify-center text-outline hover:text-secondary transition-colors" onclick="this.querySelector('span').classList.toggle('filled-icon'); this.classList.toggle('text-secondary')">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+</div>
+<div class="h-64 bg-gradient-to-br from-surface-container to-surface-container-lowest p-6 flex items-center justify-center relative overflow-hidden group-hover:bg-primary/5 transition-colors duration-500">
+<img class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" data-alt="A stylized miniature robot toy resembling an astronaut. It has a glossy white spacesuit with electric blue visors and decals. The background is a soft gray studio setup, highlighting its vibrant modern gallery vibe." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzMa_J-EWXOS0XbmE3CzqBzKoOFNe8vBlfE1uMCcz-w45Komr0-4BS92S2zSgKfWeIN0liAQfzRXXKexS-6m4kpjOAQsP4o6T3ej1XraTqxpNclWhjlgImsM9pqpZNbZGeC9Qn61TQnHWWrLE6zQS6ANVb5ZP-UzvRodpyeE-ZMo0ecDzjYlN2Z8kH6sSfsXQPphQGW9t3TYSNwMmMttjnAW23B0O26yVhpyBX7k7xjnR7ZFGAyFg53g">
+</div>
+<div class="p-4 flex flex-col flex-1 border-t border-surface-container">
+<h3 class="font-headline-md text-headline-md font-semibold text-on-surface mb-1">Astro Bot Nova</h3>
+<p class="font-body-md text-sm text-on-surface-variant mb-4">Deep Space Explorers</p>
+<div class="mt-auto flex justify-between items-center">
+<span class="font-label-bold text-lg text-on-surface font-bold">450 CR</span>
+<button class="w-10 h-10 rounded-full bg-primary hover:bg-surface-tint text-on-primary flex items-center justify-center shadow-md hover:scale-95 transition-all">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 3 (Common) -->
+<div class="bg-surface-container-lowest border border-surface-container-high rounded-xl overflow-hidden shadow-[0_4px_12px_rgba(15,23,42,0.05)] hover:shadow-[0_12px_24px_rgba(15,23,42,0.1)] hover:border-primary/50 transition-all duration-300 group relative flex flex-col">
+<div class="absolute top-4 left-4 z-10 bg-outline px-3 py-1 rounded-full shadow-sm">
+<span class="font-label-bold text-label-sm text-white uppercase tracking-wider">Common</span>
+</div>
+<div class="absolute top-4 right-4 z-10 flex gap-2">
+<button class="w-8 h-8 rounded-full bg-surface/80 backdrop-blur-sm flex items-center justify-center text-outline hover:text-secondary transition-colors" onclick="this.querySelector('span').classList.toggle('filled-icon'); this.classList.toggle('text-secondary')">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+</div>
+<div class="h-64 bg-gradient-to-br from-surface-container to-surface-container-lowest p-6 flex items-center justify-center relative overflow-hidden transition-colors duration-500">
+<img class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" data-alt="A small, cute vinyl figure of a mushroom creature with sleepy eyes. It features earthy tones like beige and soft brown, contrasting with the high-energy electric blue interface accents typical of the site." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBB2K7YXHbOREzH_JYlHXNK1qivWrZVoUIJj_c62bWFUPpZT75wpFBLcd2CuS4qpNBFFuSqE7Fd-_OSP4URDGscSDYa85DTadwQ8J5ptEZ6Xl7rNWwJFnLTS2C5CSRVQUBVUX06DGd1mB918r3Pb0r8ZEYUwTdf6_PY3dvpBXuFk1fsIdxfdnIWbI0TTmQ1uau4sWBQKsix1qIZ6oQqrc6_gjWs6H8S46tpHGKBowPHlvY71RfZqEGskQ">
+</div>
+<div class="p-4 flex flex-col flex-1 border-t border-surface-container">
+<h3 class="font-headline-md text-headline-md font-semibold text-on-surface mb-1">Sleepy Shroom</h3>
+<p class="font-body-md text-sm text-on-surface-variant mb-4">Forest Dwellers</p>
+<div class="mt-auto flex justify-between items-center">
+<span class="font-label-bold text-lg text-on-surface font-bold">120 CR</span>
+<button class="w-10 h-10 rounded-full bg-primary hover:bg-surface-tint text-on-primary flex items-center justify-center shadow-md hover:scale-95 transition-all">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- Footer -->
+<footer class="bg-surface-container-highest dark:bg-inverse-surface w-full py-lg px-margin-desktop border-t border-outline-variant/20 flex flex-col md:flex-row justify-between items-center gap-md mt-auto">
+<div class="font-headline-md text-headline-md font-bold text-on-surface dark:text-on-surface-variant">CollectiVibe</div>
+<nav class="flex flex-wrap gap-md justify-center">
+<a class="text-on-surface-variant dark:text-outline-variant font-label-sm text-label-sm hover:text-primary dark:hover:text-primary-fixed-dim underline transition-all" href="#">About</a>
+<a class="text-on-surface-variant dark:text-outline-variant font-label-sm text-label-sm hover:text-primary dark:hover:text-primary-fixed-dim underline transition-all" href="#">Terms of Service</a>
+<a class="text-on-surface-variant dark:text-outline-variant font-label-sm text-label-sm hover:text-primary dark:hover:text-primary-fixed-dim underline transition-all" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant dark:text-outline-variant font-label-sm text-label-sm hover:text-primary dark:hover:text-primary-fixed-dim underline transition-all" href="#">Contact Support</a>
+</nav>
+<div class="font-label-sm text-label-sm text-on-surface-variant dark:text-outline-variant">© 2024 CollectiVibe. All rights reserved.</div>
+</footer>
+</body></html>
