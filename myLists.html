@@ -1,0 +1,276 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>CollectiVibe - Collection Lists Management</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&amp;family=Work+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="myListsStyles.css" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary": "#ffffff",
+                        "on-secondary-container": "#fffbff",
+                        "outline": "#737686",
+                        "tertiary-fixed-dim": "#d0bcff",
+                        "background": "#f7f9fb",
+                        "surface-container-high": "#e6e8ea",
+                        "primary-fixed": "#dbe1ff",
+                        "on-primary-container": "#eeefff",
+                        "inverse-on-surface": "#eff1f3",
+                        "on-tertiary-container": "#f6edff",
+                        "surface-container-highest": "#e0e3e5",
+                        "surface-variant": "#e0e3e5",
+                        "tertiary-fixed": "#e9ddff",
+                        "on-surface-variant": "#434655",
+                        "on-tertiary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "surface": "#f7f9fb",
+                        "secondary": "#b90538",
+                        "on-secondary-fixed": "#40000d",
+                        "tertiary": "#632ecd",
+                        "on-tertiary-fixed-variant": "#5516be",
+                        "outline-variant": "#c3c6d7",
+                        "on-secondary-fixed-variant": "#92002a",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "on-secondary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed-dim": "#ffb2b7",
+                        "on-tertiary-fixed": "#23005c",
+                        "inverse-surface": "#2d3133",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed": "#ffdadb",
+                        "on-primary-fixed": "#00174b",
+                        "inverse-primary": "#b4c5ff",
+                        "primary-container": "#2563eb",
+                        "surface-tint": "#0053db",
+                        "surface-bright": "#f7f9fb",
+                        "error": "#ba1a1a",
+                        "secondary-container": "#dc2c4f",
+                        "surface-container": "#eceef0",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "on-background": "#191c1e",
+                        "primary": "#004ac6",
+                        "on-surface": "#191c1e",
+                        "surface-dim": "#d8dadc",
+                        "tertiary-container": "#7d4ce7",
+                        "surface-container-low": "#f2f4f6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "md": "24px",
+                        "sm": "12px",
+                        "margin-desktop": "48px",
+                        "gutter": "20px",
+                        "base": "8px",
+                        "margin-mobile": "16px",
+                        "xs": "4px",
+                        "xl": "64px",
+                        "lg": "40px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Work Sans"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "body-md": ["Work Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "label-bold": ["Work Sans"],
+                        "body-lg": ["Work Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "label-bold": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" }]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md">
+<!-- TopNavBar -->
+<nav class="bg-surface dark:bg-inverse-surface text-primary dark:text-primary-fixed-dim font-body-md text-body-md w-full h-16 bg-white dark:bg-inverse-surface shadow-sm flex justify-between items-center px-margin-desktop border-b border-outline-variant/30 sticky top-0 z-50">
+<div class="flex items-center gap-md">
+<span class="font-display-lg text-headline-lg-mobile md:text-headline-lg font-extrabold text-primary dark:text-primary-fixed-dim">CollectiVibe</span>
+</div>
+<div class="hidden md:flex flex-1 justify-center items-center gap-lg">
+<!-- Navigation Links -->
+<a class="text-on-surface-variant dark:text-outline-variant font-medium hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200" href="index.html">Collections</a>
+<a aria-current="page" class="text-primary dark:text-primary-fixed-dim border-b-2 border-primary font-bold pb-1 hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200" href="myLists.html">My Lists</a>
+</div>
+<div class="flex items-center gap-sm">
+<div class="relative hidden md:flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-outline" data-icon="search">search</span>
+<input class="pl-10 pr-4 py-2 bg-surface-container-low border border-outline-variant rounded-full text-label-bold font-label-bold focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all w-64" placeholder="Search..." type="text">
+</div>
+<button aria-label="notifications" class="p-2 text-on-surface-variant hover:text-primary transition-colors duration-200">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button aria-label="shopping_cart" class="p-2 text-on-surface-variant hover:text-primary transition-colors duration-200">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+</button>
+<img alt="User Profile Avatar" class="w-10 h-10 rounded-full border-2 border-primary object-cover ml-2" data-alt="A small circular user profile avatar showing a stylized, brightly lit digital rendering of a person with a modern aesthetic, consistent with a high-end collector platform. The background is a crisp white." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFqRGSPIowz3rcLG83eFOGdA2T-WfpSGyxPGBGt60xLWmEnzTyLCrmbI5BnXBfxXLhUh95hzoKD42FM_tDPqABVFMk8uKQoGXD4XTdSzNXX_wtKaZ3p5xUvKhXHD-m9shS9NBNTZaW1JWS5xsOe9iGQPma_aZCqNVA3Hnjvzeh7v2BolDmimdFQVgqVj9qjXqizLBoDaD8UIjvBQvWCoTYLO72vH8aN7vuX3BchM1N9yuOaMU1Pqth9g">
+</div>
+</nav>
+<div class="flex flex-1 w-full max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop py-lg gap-lg">
+<!-- SideNavBar (Hidden on Mobile) -->
+<aside class="hidden md:flex bg-surface-container-low dark:bg-surface-container-highest text-primary dark:text-primary-fixed-dim font-label-bold text-label-bold w-64 h-[calc(100vh-6rem)] sticky top-24 flex-col gap-base p-md rounded-xl">
+<div class="mb-sm">
+<h2 class="font-headline-md text-headline-md text-primary">Rarity Filters</h2>
+<p class="text-on-surface-variant text-label-sm font-label-sm mt-1">Browse by Tier</p>
+</div>
+<nav class="flex flex-col gap-xs flex-1">
+<a class="flex items-center gap-sm p-3 text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high dark:hover:bg-surface-variant rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="category">category</span>
+<span>All Items</span>
+</a>
+<a class="flex items-center gap-sm p-3 text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high dark:hover:bg-surface-variant rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="label">label</span>
+<span>Common</span>
+</a>
+<a class="flex items-center gap-sm p-3 text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high dark:hover:bg-surface-variant rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="stars">stars</span>
+<span>Rare</span>
+</a>
+<a class="flex items-center gap-sm p-3 text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high dark:hover:bg-surface-variant rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="workspace_premium">workspace_premium</span>
+<span>Legendary</span>
+</a>
+<a class="flex items-center gap-sm p-3 text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high dark:hover:bg-surface-variant rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="diamond">diamond</span>
+<span>Mythic</span>
+</a>
+</nav>
+<button class="mt-auto py-2 px-4 border border-outline text-on-surface-variant rounded-lg font-label-bold text-label-bold hover:bg-surface-container-high transition-colors w-full text-center">
+                Reset Filters
+            </button>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col gap-lg min-w-0">
+<!-- Header Section -->
+<div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-md">
+<div>
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">My Lists</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">Manage and organize your curated collections.</p>
+</div>
+<button class="bg-primary text-on-primary font-label-bold text-label-bold py-3 px-6 rounded-lg hover:bg-primary/90 transition-transform active:scale-95 flex items-center gap-sm shadow-sm hover:shadow-md">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+                    Create New List
+                </button>
+</div>
+<!-- Lists Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-gutter">
+<!-- List Card 1: Series 1 Complete -->
+<div class="bg-surface-container-lowest border border-surface-variant rounded-xl shadow-sm hover:shadow-md transition-all duration-300 group flex flex-col h-full overflow-hidden">
+<div class="p-sm grid grid-cols-2 gap-xs h-40 bg-surface-container-low">
+<div class="rounded-lg overflow-hidden relative">
+<img class="w-full h-full object-cover" data-alt="A high-quality close-up product photo of a rare collectible vinyl figure in pristine condition, set against a bright, clean white studio background. The figure features vibrant electric blue and rose accents, highlighting a premium collector aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuARJOnQgUDJUj8SGiagokZv9fbEFn3RfwALEaogBnpj5BfO0r31sDW3f-DdctbySAsaUwrcNXiF0534iTn4w58b-MyKqovw8xFYHWLqTes773rFPAFLzx8mqMoXyXlvghiaWssjhaekUk4a0PM-Lp6CQBa0iHJ38in-CAPInVwQiyS8cFS3P_Ss8E3y9r7z86L00RuRw6X1zoYxTvBEDo2G6HqIi2fIt3Dg17hgY5TzR5P3WsVDuGYH2g">
+</div>
+<div class="rounded-lg overflow-hidden relative">
+<img class="w-full h-full object-cover" data-alt="A premium trading card enclosed in a thick acrylic protective case, standing upright. The background is a seamless light grey gradient to white. The card artwork features energetic dynamic lines in secondary rose and blue tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuClgQClFwDeP_xAYFwHn-zNbBA_ffr2rIBCjlcFNLqqdnK0FgYLDAuSJhC7OmLhwFJSUltbDWtpEjK9eqWd5kZ68cYYy7pPYLEY4TdWnyV_Yji22i6VJS8awOwwhnGBHn1ys7LjihmeSX9xRDy0SCeHNiwSPw8aac1uF3xx885K10LzKBdXfzS_-p-YtezpwjWHENghC18ZK668t4tMfgWKgc7KE0gLp0brbSmVbyCM1_4xUxQuih3XOg">
+</div>
+<div class="rounded-lg overflow-hidden relative">
+<img class="w-full h-full object-cover" data-alt="A detailed macro shot of a metallic collectible coin with an embossed geometric design, reflecting soft studio lighting. The setting is minimal and bright, enhancing the high-contrast modern style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuADgGRG_2dL_mAPMdr_jqfh9av3I_qVvM9kEICqCxLNnoVDh8eOnAG6fioE9N5ATEswo-_BA-_zvays1kZI9enjH_h1Ry8RsAEzMlxSFfeBfkTQvlvhCvz7ltA9sXh4-5ckNHlHfVwW48hsU2jCnR1B0RG5UhUxKj3NpL7Eg-p68w0sQSAhzoF0NttQ87zXgeu-usbI_SNAqnm0sFg3zGhdnYf_Q6093coqML4RNxa22g8w15olDYEZ7g">
+</div>
+<div class="rounded-lg overflow-hidden bg-surface-container-high flex items-center justify-center relative">
+<span class="font-headline-md text-headline-md text-on-surface-variant">+42</span>
+</div>
+</div>
+<div class="p-md flex flex-col flex-1 border-t border-surface-variant">
+<div class="flex justify-between items-start mb-sm">
+<h3 class="font-headline-md text-headline-md text-on-surface line-clamp-1">Series 1 Complete</h3>
+<button aria-label="Edit list" class="text-on-surface-variant hover:text-primary transition-colors p-1">
+<span class="material-symbols-outlined" data-icon="edit">edit</span>
+</button>
+</div>
+<div class="flex items-center gap-sm mt-auto pt-sm">
+<span class="bg-surface-variant text-on-surface-variant px-2 py-1 rounded text-label-sm font-label-sm">45 Items</span>
+<span class="bg-primary/10 text-primary px-2 py-1 rounded text-label-sm font-label-sm flex items-center gap-xs">
+<span class="material-symbols-outlined text-[14px]" data-icon="public" style="font-size: 14px;">public</span> Public
+                            </span>
+</div>
+</div>
+</div>
+<!-- List Card 2: Wishlist -->
+<div class="bg-surface-container-lowest border border-surface-variant rounded-xl shadow-sm hover:shadow-md transition-all duration-300 group flex flex-col h-full overflow-hidden">
+<div class="p-sm grid grid-cols-2 gap-xs h-40 bg-surface-container-low">
+<div class="rounded-lg overflow-hidden relative col-span-2 row-span-2">
+<img class="w-full h-full object-cover" data-alt="A sleek, futuristic digital wearable accessory displayed on a pristine white pedestal. The lighting is crisp and high-key, emphasizing the object's smooth textures and vibrant violet glowing accents, fitting a modern high-end gallery vibe." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCM2HEKKrXfVsqH-NzCrNWkFurDnInvq1r2WsgCONwgzg2Q5H0CSPdbkiZu2aDR1wesYlB6VXuXSonhkNYRB4jRvwoe07wrDZ1OGG648_nJT9iCaWN5zSdJBjn_DWExCrfTPpB-URJPQpEthb5sdFS0ZgHv9Vy68Xfb1sfd_4E3xjR5haxTNSnUrLh0ue3OBM05RyTtloGyrBpkv5aza31kDXrC5Gv7Xnq7r3BeLO80XokkHy6X8KXrXA">
+<div class="absolute inset-0 bg-black/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-4xl" data-icon="favorite" data-weight="fill">favorite</span>
+</div>
+</div>
+</div>
+<div class="p-md flex flex-col flex-1 border-t border-surface-variant">
+<div class="flex justify-between items-start mb-sm">
+<h3 class="font-headline-md text-headline-md text-on-surface line-clamp-1">Wishlist</h3>
+<button aria-label="Edit list" class="text-on-surface-variant hover:text-primary transition-colors p-1">
+<span class="material-symbols-outlined" data-icon="edit">edit</span>
+</button>
+</div>
+<div class="flex items-center gap-sm mt-auto pt-sm">
+<span class="bg-surface-variant text-on-surface-variant px-2 py-1 rounded text-label-sm font-label-sm">12 Items</span>
+<span class="bg-surface-container-high text-on-surface px-2 py-1 rounded text-label-sm font-label-sm flex items-center gap-xs">
+<span class="material-symbols-outlined text-[14px]" data-icon="lock" style="font-size: 14px;">lock</span> Private
+                            </span>
+</div>
+</div>
+</div>
+<!-- List Card 3: Trading Pile -->
+<div class="bg-surface-container-lowest border border-surface-variant rounded-xl shadow-sm hover:shadow-md transition-all duration-300 group flex flex-col h-full overflow-hidden">
+<div class="p-sm grid grid-cols-3 gap-xs h-40 bg-surface-container-low">
+<div class="rounded-lg overflow-hidden relative col-span-2 row-span-2">
+<img class="w-full h-full object-cover" data-alt="A stylized stack of sealed collectible boxes, featuring minimalist graphic design and sharp edges. The lighting is soft yet bright, highlighting the premium cardboard texture and electric blue brand markings against a clean background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJqDaeArHeoaYZXpuLUnDLMy2AuY9Zh5EifRSyexy6WhzRJqQTL7ZwgTiYK6AUF-1E2cPQbGLfSDHLCYwwMOU-F2k-l7z70FD-2StW3QPFMOWKs3Y1CaX46yRW860qYPeI2VXHaGGgIJYXXmUdPl6SCOH3rBl5O7GixXjjm8wh9VuFHT7gFAnLlNjvgA5QYpIEitD94XF0HlTRV332Y_aMZtCweaPSj7eMA6u6Utb8KYyB9vYUhbeSCA">
+</div>
+<div class="rounded-lg overflow-hidden relative">
+<img class="w-full h-full object-cover" data-alt="A single, brightly colored collectible token resting on a polished white surface. The image is clean and highly contrasted, embodying a gamified yet premium aesthetic with subtle drop shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAg0AgUDw_BJVWmuGU5DU8bOTb-RGSLQqEERuV2GEt1Rkt4xyq-mcorML0iQ0XMK0r6YKTM8mhgVLf3APKEfxc3KSv7MDvkx1DLaQ4H6F2S0DjFVvn088VbGuvtxVuvzrHgeb5XjOSiyovFyI15ckB5OwMCvpR4P_AwASZEZgsXA7CleuFublSLvq2fGCYbaEzIVDQ9nyM6jHYaGpykdgKuHq1gXz_6HOcPl_8simrQY3xdy9YVIPI78A">
+</div>
+<div class="rounded-lg overflow-hidden relative">
+<img class="w-full h-full object-cover" data-alt="A close-up of a holographic sticker on a collectible item, reflecting iridescent colors in a well-lit, sterile studio environment. The overall tone is modern, energetic, and clean." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjMaP5CBkqK8dhe35lcaItnFz0HHlrTj7x_5R0oYT-ltZ3AGFkgtkKRB-e9EWhKEXW6vCLLeIrO6p2bN5ZfIUkCGXmJSGsx_YQ5y1_kWOJdz8eJn7rbXX1Dx7d2xeyZbJGA4zcaUXMHUBAmFA4NLiW61cLK-x_pSlotdvdoQObEecmLbzlglJAdDb1vODj9XM-E3zEWi8WLRvAPxBTk-wYr2MCSkbNRkzZ4s_EfUnSUoAnpnz42cRzeA">
+</div>
+</div>
+<div class="p-md flex flex-col flex-1 border-t border-surface-variant">
+<div class="flex justify-between items-start mb-sm">
+<h3 class="font-headline-md text-headline-md text-on-surface line-clamp-1">Trading Pile</h3>
+<button aria-label="Edit list" class="text-on-surface-variant hover:text-primary transition-colors p-1">
+<span class="material-symbols-outlined" data-icon="edit">edit</span>
+</button>
+</div>
+<div class="flex items-center gap-sm mt-auto pt-sm">
+<span class="bg-surface-variant text-on-surface-variant px-2 py-1 rounded text-label-sm font-label-sm">8 Items</span>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed px-2 py-1 rounded text-label-sm font-label-sm flex items-center gap-xs">
+<span class="material-symbols-outlined text-[14px]" data-icon="swap_horiz" style="font-size: 14px;">swap_horiz</span> Active Trades
+                            </span>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- Footer -->
+<footer class="bg-surface-container-highest dark:bg-inverse-surface text-primary dark:text-primary-fixed-dim font-label-sm text-label-sm w-full py-lg px-margin-desktop bg-surface-container-highest dark:bg-inverse-surface border-t border-outline-variant/20 flex flex-col md:flex-row justify-between items-center gap-md mt-auto">
+<div class="font-headline-md text-headline-md font-bold text-on-surface dark:text-on-surface-variant">CollectiVibe</div>
+<div class="flex gap-md">
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim underline transition-all" href="#">About</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim underline transition-all" href="#">Terms of Service</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim underline transition-all" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim underline transition-all" href="#">Contact Support</a>
+</div>
+<div class="text-on-surface-variant dark:text-outline-variant">© 2024 CollectiVibe. All rights reserved.</div>
+</footer>
+</body></html>
